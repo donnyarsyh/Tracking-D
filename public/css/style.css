@@ -4,39 +4,116 @@
     box-sizing: border-box;
 }
 
+:root {
+    --color-primary: #00A8E8;
+    --color-primary-dark: #0077b6; /* hover */
+    --color-text-dark: #000;
+    --color-text-mid: #666;
+    --color-text-light: #777;
+    --color-footer-bg: #1a1a1a;
+    --color-card-bg: #fff;
+    --color-shadow-light: 0 2px 4px rgba(0, 0, 0, 0.05);
+    --color-shadow-medium: 0 4px 10px rgba(0, 0, 0, 0.1);
+    --color-shadow-large: 0 4px 15px rgba(0, 0, 0, 0.08);
+
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --font-weight-extrabold: 800;
+    --font-size-base: 16px;
+    --font-size-large: 18px;
+    --font-size-title-1: 44px; /* Hero Title */
+    --font-size-title-2: 36px; /* Section Title */
+    --font-size-title-3: 32px; /* Salam Title */
+    --font-size-title-4: 24px; /* Header Logo / Form Title */
+
+    /* Layout */
+    --spacing-base: 20px;
+    --section-padding: 80px 80px;
+    --container-padding-desktop: 40px 40px;
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
-    color: #333;
+    color: var(--color-text-dark);
     line-height: 1.6;
     background-image: url('../images/bg-white.jpg');
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
+img { max-width: 100%; height: auto; }
+
+a { text-decoration: none; color: inherit; }
+
+/* -------------------------------------------
+========== UTILITY CLASSES (Umum) ==========
+------------------------------------------- */
+
+/* Penataan Layout Bagian */
+.section {
+    padding: var(--section-padding);
+    background-color: transparent;
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
+.section--dark {
+    /* Kelas khusus untuk bagian Tutorial */
+    background-color: var(--color-primary);
+    background-image: url('../images/bg-view.png');
+    color: var(--color-card-bg);
+    text-align: center;
 }
 
-/* ========== NAVBAR ========== */
+.section-title {
+    font-size: var(--font-size-title-2);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--spacing-base);
+}
+
+.section-subtitle {
+    font-size: var(--font-size-base);
+    color: var(--color-text-light);
+    margin-bottom: 50px;
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-card-bg);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: var(--font-weight-semibold);
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: var(--color-primary-dark);
+}
+
+.card-container {
+    background-color: var(--color-card-bg);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+}
+
+
+/* ---------------------------------
+========== NAVBAR & HEADER ==========
+--------------------------------- */
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 20px;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    padding: var(--spacing-base);
+    background-color: var(--color-card-bg);
+    box-shadow: var(--color-shadow-light);
 }
 
 .header__logo {
-    font-size: 24px;
-    font-weight: 700;
-    color: #00A8E8; /* Biru Primer */
+    font-size: var(--font-size-title-4);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-primary);
 }
 
 .header__navigasi {
@@ -45,38 +122,42 @@ a {
 }
 
 .navigasi__item {
-    font-weight: 500;
+    font-weight: var(--font-weight-medium);
     color: #555;
     transition: color 0.3s;
 }
 
 .navigasi__item:hover,
 .navigasi__item.aktif {
-    color: #00A8E8;
-    font-weight: 600;
+    color: var(--color-primary);
+    font-weight: var(--font-weight-semibold);
 }
 
 .header__tombol-masuk {
-    background-color: #00A8E8;
-    color: #fff;
     padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: background-color 0.3s;
 }
 
-.header__tombol-masuk:hover {
-    background-color: #00A8E8;
+.header__profil-user {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid var(--color-primary);
+}
+.header__profil-user img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 
-/* ========== HERO ========== */
+/* -----------------------------
+========== HERO & CONTENT SECTIONS ==========
+----------------------------- */
 .bagian-hero {
     display: flex;
     align-items: center;
-    padding: 40px 40px;
+    padding: var(--container-padding-desktop);
     gap: 5px;
     background-color: transparent;
 }
@@ -86,45 +167,37 @@ a {
 }
 
 .hero__judul {
-    font-size: 44px;
-    font-weight: 800;
-    margin-bottom: 20px;
+    font-size: var(--font-size-title-1);
+    font-weight: var(--font-weight-extrabold);
+    margin-bottom: var(--spacing-base);
     line-height: 1.2;
 }
 
 .hero__judul-highlight {
-    color: #00A8E8; 
+    color: var(--color-primary);
 }
 
 .hero__deskripsi {
-    font-size: 18px;
-    color: #666;
+    font-size: var(--font-size-large);
+    color: var(--color-text-mid);
     margin-bottom: 30px;
 }
 
+/* Tombol Utama (Menggunakan btn-primary) */
 .hero__tombol-utama {
-    background-color: #00A8E8;
-    color: #fff;
     padding: 12px 30px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: 600;
-    transition: background-color 0.3s;
+    font-size: var(--font-size-base);
 }
 
-.hero__tombol-utama:hover {
-    background-color: #00A8E8;
-}
 
-/* ========== PENJELASAN ========== */
+/* -----------------------------
+========== Penjelasan ==========
+----------------------------- */
 .bagian-penjelasan {
     display: flex;
     align-items: center;
-    padding: 80px 80px;
+    padding: var(--section-padding);
     gap: 60px;
-    background-color: transparent;
 }
 
 .penjelasan__konten {
@@ -132,34 +205,22 @@ a {
 }
 
 .penjelasan__judul {
-    font-size: 36px;
-    font-weight: 700;
-    margin-bottom: 20px;
+    font-size: var(--font-size-title-2); 
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--spacing-base);
 }
 
 .penjelasan__deskripsi {
-    font-size: 18px;
-    color: #666;
+    font-size: var(--font-size-large);
+    color: var(--color-text-mid);
 }
 
 
-/* ========= FITUR ========= */
+/* -----------------------------
+========== Fitur (Kartu) ==========
+----------------------------- */
 .bagian-fitur {
-    padding: 80px 80px;
     text-align: center;
-    background-color: transparent;  
-}
-
-.fitur__judul {
-    font-size: 36px;
-    font-weight: 700;
-    margin-bottom: 10px;
-}
-
-.fitur__subjudul {
-    font-size: 16px;
-    color: #777;
-    margin-bottom: 50px;
 }
 
 .fitur__wadah-kartu {
@@ -169,80 +230,65 @@ a {
 }
 
 .fitur__kartu {
-    background-color: #fff;
     padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     max-width: 400px;
     text-align: left;
-    border-top: 5px solid #00A8E8;
+    border-top: 5px solid var(--color-primary);
+    background-color: var(--color-card-bg) ;
+    border-radius: 1cap;
 }
 
 .kartu__ikon-wadah {
-    width: 20px;
-    height: 20px;
-    background-color: #00A8E8;
+    width: 40px;
+    height: 40px;
+    background-color: var(--color-primary);
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: var(--spacing-base);
 }
 
 .kartu__ikon {
-    color: #fff;
+    color: var(--color-card-bg);
     font-size: 24px;
 }
 
 .kartu__judul {
     font-size: 20px;
-    font-weight: 600;
+    font-weight: var(--font-weight-semibold);
     margin-bottom: 15px;
 }
 
 .kartu__deskripsi {
-    color: #777;
+    color: var(--color-text-light);
     font-size: 14px;
 }
 
-
-/* ========== TUTORIAL ========== */
-.bagian-tutorial {
-    padding: 80px 80px;
-    text-align: center;
-    background-color: #00A8E8;
-    background-image: url('../images/bg-view.png');
-    color: #fff;
-}
-
-.tutorial__judul {
-    font-size: 36px;
-    font-weight: 700;
-    margin-bottom: 10px;
-}
-
+/* ---------------------------------
+========== Tutorial ==========
+--------------------------------- */
 .tutorial__subjudul {
-    font-size: 16px;
     color: #c9e0ff;
-    margin-bottom: 50px;
 }
 
 .tutorial__wadah-langkah {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    gap: var(--spacing-base);
 }
 
 .langkah__item {
-    background-color: #fff;
-    color: #333;
+    background-color: var(--color-card-bg);
+    color: var(--color-text-dark);
     padding: 30px;
     border-radius: 10px;
-    width: 30%; /* Mengatur 3 kolom per baris */
+    width: 30%;
     text-align: left;
     position: relative;
-    min-height: 200px; /* Menjaga ukuran agar rapi */
+    min-height: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .langkah__nomor {
@@ -251,33 +297,35 @@ a {
     right: -20px;
     width: 40px;
     height: 40px;
-    background-color: #00A8E8;
-    color: #fff;
+    background-color: var(--color-primary);
+    color: var(--color-card-bg);
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-weight: 700;
-    font-size: 20px;
+    font-weight: var(--font-weight-bold);
+    font-size: var(--spacing-base);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .langkah__judul {
-    font-size: 18px;
-    font-weight: 600;
+    font-size: var(--font-size-large);
+    font-weight: var(--font-weight-semibold);
     margin-bottom: 10px;
     margin-top: 10px;
 }
 
 .langkah__deskripsi {
     font-size: 14px;
-    color: #777;
+    color: var(--color-text-light);
 }
 
-/* ========== FOOTER ========== */
+/* -----------------------------
+========== FOOTER ==========
+----------------------------- */
 .kaki-halaman {
-    background-color: #1a1a1a;
-    color: #fff;
+    background-color: var(--color-footer-bg);
+    color: var(--color-card-bg);
     padding: 50px 80px 20px;
     font-size: 14px;
 }
@@ -296,10 +344,10 @@ a {
 }
 
 .kaki-halaman__judul-kolom {
-    font-size: 18px;
-    font-weight: 700;
-    margin-bottom: 20px;
-    color: #00A8E8;
+    font-size: var(--font-size-large);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--spacing-base);
+    color: var(--color-primary);
 }
 
 .kaki-halaman__teks {
@@ -314,58 +362,32 @@ a {
     transition: color 0.3s;
 }
 
-.kaki-halaman__tautan:hover {
-    color: #00A8E8;
+.kaki-halaman__tautan:hover,
+.kaki-halaman__sosmed a:hover {
+    color: var(--color-primary);
 }
 
 .kaki-halaman__sosmed a {
-    color: #fff;
-    font-size: 20px;
+    color: var(--color-card-bg);
+    font-size: var(--spacing-base);
     margin-right: 15px;
     transition: color 0.3s;
 }
 
-.kaki-halaman__sosmed a:hover {
-    color: #00A8E8;
-}
-
 .kaki-halaman__hak-cipta {
     text-align: center;
-    padding-top: 20px;
+    padding-top: var(--spacing-base);
     border-top: 1px solid #333;
     color: #888;
 }
 
-/* ========== FITUR PAGE STYLING KHUSUS ========== */
+/* -------------------------------------------
+========== FITUR PAGE  ==========
+------------------------------------------- */
 
-/* Header fitur: Menghilangkan tombol masuk dan mengganti dengan avatar */
-.header--fitur {
-    padding: 15px 40px;
-}
-
-.header--fitur .header__navigasi {
-    margin-right: auto; /* Mendorong logo ke kiri, navigasi ke tengah */
-    margin-left: 20px; 
-}
-
-.header__profil-user {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    overflow: hidden;
-    border: 2px solid #00A8E8; /* Border biru di avatar */
-}
-
-.header__profil-user img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* MAIN CONTENT */
 .bagian-fitur-utama {
     padding: 40px 80px;
-    background-color: transparent; /* Tetap menggunakan background body */
+    background-color: transparent;
 }
 
 .salam-pengguna {
@@ -374,17 +396,16 @@ a {
 }
 
 .salam__judul {
-    font-size: 32px;
-    font-weight: 700;
+    font-size: var(--font-size-title-3);
+    font-weight: var(--font-weight-bold);
     margin-bottom: 10px;
 }
 
 .salam__deskripsi {
-    font-size: 16px;
-    color: #666;
+    font-size: var(--font-size-base);
+    color: var(--color-text-mid);
 }
 
-/* Wadah Utama Prediksi */
 .wadah-prediksi {
     display: flex;
     gap: 30px;
@@ -393,21 +414,20 @@ a {
 /* Kolom Kiri: Formulir */
 .kolom-input-form {
     flex: 2; /* Mengambil 2/3 lebar */
-    background-color: #fff;
     padding: 30px;
     border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    box-shadow: var(--color-shadow-large);
 }
 
 .form__judul {
-    font-size: 24px;
-    font-weight: 600;
+    font-size: var(--font-size-title-4);
+    font-weight: var(--font-weight-semibold);
     margin-bottom: 5px;
 }
 
 .form__deskripsi {
     font-size: 14px;
-    color: #777;
+    color: var(--color-text-light);
     margin-bottom: 25px;
 }
 
@@ -417,55 +437,53 @@ a {
     margin-bottom: 15px;
     border: 1px solid #ddd;
     border-radius: 8px;
-    font-size: 16px;
-    color: #333;
+    font-size: var(--font-size-base);
+    color: var(--color-text-dark);
     transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 .form__input:focus {
-    border-color: #00A8E8;
+    border-color: var(--color-primary);
     outline: none;
     box-shadow: 0 0 0 3px rgba(0, 168, 232, 0.2);
 }
 
-/* Kolom Kanan: Hasil AI/CTA */
+/* Kolom Kanan: Hasil AI */
 .kolom-hasil-ai {
     flex: 1; /* Mengambil 1/3 lebar */
-    background-color: #fff;
     padding: 30px;
     border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    box-shadow: var(--color-shadow-large);
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     position: relative;
-    overflow: hidden; /* Penting untuk gambar */
+    overflow: hidden;
 }
 
-/* Tambahkan warna latar belakang hijau muda di bagian atas Bagus!! */
 .hasil-ai__konten {
-    background-color: #e0fff0; /* Warna Hijau Muda */
-    width: calc(100% + 60px); /* Melebihi batas padding */
-    margin: -30px -30px 20px -30px; /* Tarik ke luar container */
+    background-color: #e0fff0;
+    width: calc(100% + 60px);
+    margin: -30px -30px 20px -30px;
     padding: 30px;
     padding-bottom: 10px;
-    border-radius: 15px 15px 0 0; /* Hanya sudut atas yang melengkung */
+    border-radius: 15px 15px 0 0;
     position: relative;
     z-index: 10;
 }
 
 .hasil-ai__judul {
     font-size: 30px;
-    font-weight: 800;
-    color: #4CAF50; /* Warna Hijau Gelap */
+    font-weight: var(--font-weight-extrabold);
+    color: #4CAF50;
     margin-bottom: 10px;
 }
 
 .hasil-ai__deskripsi {
     font-size: 14px;
-    color: #666;
-    margin-bottom: 20px;
+    color: var(--color-text-mid);
+    margin-bottom: var(--spacing-base);
 }
 
 .hasil-ai__gambar {
@@ -474,68 +492,37 @@ a {
     margin: 10px 0 20px 0;
 }
 
-.hasil-ai__gambar img {
-    width: 100%;
-    height: auto;
-}
-
 .hasil-ai__tombol-generate {
     width: 100%;
-    background-color: #00A8E8;
-    color: #fff;
     padding: 12px 0;
-    border: none;
     border-radius: 8px;
-    cursor: pointer;
-    font-size: 18px;
-    font-weight: 700;
-    transition: background-color 0.3s;
-    margin-top: auto; /* Mendorong tombol ke bawah */
+    font-size: var(--font-size-large);
+    font-weight: var(--font-weight-bold);
+    margin-top: auto;
 }
 
-.hasil-ai__tombol-generate:hover {
-    background-color: #0077b6; /* Biru yang sedikit lebih gelap */
-}
 
-/* Media Query untuk Responsif */
+/* -----------------------------
+========== RESPONSIVE ==========
+----------------------------- */
+
 @media (max-width: 1024px) {
-    .bagian-fitur-utama {
-        padding: 40px;
+    :root {
+        --section-padding: 40px;
     }
 
-    .wadah-prediksi {
-        flex-direction: column;
-    }
-}
-
-@media (max-width: 768px) {
-    .bagian-fitur-utama {
-        padding: 20px;
-    }
-    
-    .header--fitur {
-        padding: 15px 20px;
-    }
-}
-
-/* Penyesuaian Responsif Sederhana */
-@media (max-width: 1024px) {
-    .header, .bagian-hero, .bagian-penjelasan, .bagian-fitur, .bagian-tutorial {
-        padding: 20px 40px;
+    .header, .section, .bagian-hero, .bagian-fitur-utama, .kaki-halaman {
+        padding-left: 40px;
+        padding-right: 40px;
     }
 
     .hero__konten, .penjelasan__konten {
         max-width: 100%;
-    }
-
-    .bagian-hero, .bagian-penjelasan {
-        flex-direction: column;
         text-align: center;
     }
 
-    .hero__gambar, .penjelasan__gambar {
-        width: 300px;
-        height: 300px;
+    .bagian-hero, .bagian-penjelasan, .wadah-prediksi {
+        flex-direction: column;
     }
 
     .fitur__wadah-kartu {
@@ -548,15 +535,36 @@ a {
     }
 }
 
+/* Penyesuaian untuk Mobile */
 @media (max-width: 768px) {
+    :root {
+        --section-padding: 40px 20px;
+        --font-size-title-1: 36px;
+        --font-size-title-2: 30px;
+        --font-size-title-3: 28px;
+    }
+
     .header {
         flex-direction: column;
         gap: 15px;
+        padding: 15px 20px;
     }
+
     .header__navigasi {
         gap: 15px;
     }
+
+    .header, .section, .bagian-fitur-utama, .kaki-halaman {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    
     .langkah__item {
         width: 100%;
+    }
+
+    .kaki-halaman__wadah {
+        flex-direction: column;
+        gap: 30px;
     }
 }
