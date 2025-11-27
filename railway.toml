@@ -1,7 +1,4 @@
 [build]
-builder = "frankenphp"
-
-[build]
 buildCommand = "composer install --no-dev --optimize-autoloader"
 
 [deploy]
