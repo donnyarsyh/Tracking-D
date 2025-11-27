@@ -1,5 +1,5 @@
 [build]
-buildCommand = "npm install && npm run build && composer install --no-dev --optimize-autoloader"
+builder = "frankenphp"
 
 [deploy]
 startCommand = "frankenphp php-server public/"
