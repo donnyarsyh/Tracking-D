@@ -1,7 +1,7 @@
 <?php
 use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
-    return view('diabetes');
+    return view('landingpage');
 });
 
 Route::get('/diabetes', function () {
@@ -15,6 +15,3 @@ Route::get('/lifestyle', function () {
 Route::get('/profile', function () {
     return view('profile');
 })->name('profile.page');
-
-
-
