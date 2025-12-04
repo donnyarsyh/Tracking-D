@@ -31,9 +31,15 @@ class UserSeeder extends Seeder
                 'password' => Hash::make('123'),
             ],
         ];
-
-        foreach ($users as $user) {
-            User::create($user);
+        
+        foreach ($users as $data) {
+            User::updateOrCreate(
+                ['email' => $data['email']], // kondisi unik
+                [
+                    'name' => $data['name'],
+                    'password' => Hash::make($data['password']),
+                ]
+            );
         }
     }
 }
