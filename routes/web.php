@@ -21,11 +21,11 @@ Route::post('/logout', [LoginController::class, 'logout'])
 
 
 Route::get('/diabetes', function () {
-    return view('diabetes');
+    return view('page.diabetes');
 })->middleware('auth')->name('diabetes.page');
 
 Route::get('/lifestyle', function () {
-    return view('lifestyle');
+    return view('page.lifestyle');
 })->middleware('auth')->name('lifestyle.page');
 
 // PROFILE Routes
@@ -35,5 +35,5 @@ Route::post('/profile/update', [ProfileController::class, 'update'])
 
 
 Route::get('/profile', function () {
-    return view('profile');
+    return view('page.profile');
 })->middleware('auth')->name('profile.page');

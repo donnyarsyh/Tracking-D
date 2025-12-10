@@ -5,7 +5,7 @@
 }
 
 :root {
-    --color-blue: #00A8E8;
+    --color-blue: #00a8e8;
     --color-blue-hover: #0077b6; /* hover */
     --color-text-dark: #000;
     --color-text-mid: #666;
@@ -31,7 +31,7 @@
     --spacing-base: 20px;
     --section-padding: 70px 70px;
     --container-padding-desktop: 40px 40px;
-    --header-height:80px;
+    --header-height: 80px;
 }
 
 html {
@@ -39,17 +39,23 @@ html {
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     color: var(--color-text-dark);
     line-height: 1.6;
-    background-image: url('../images/bg-white.jpg');
+    background-image: url("../images/bg-white.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-img { max-width: 100%; height: auto; }
+img {
+    max-width: 100%;
+    height: auto;
+}
 
-a { text-decoration: none; color: inherit; }
+a {
+    text-decoration: none;
+    color: inherit;
+}
 
 /* -------------------------------------------
 ========== UTILITY CLASSES (Umum) ==========
@@ -64,7 +70,7 @@ a { text-decoration: none; color: inherit; }
 .section--dark {
     /* Kelas khusus untuk bagian Tutorial */
     background-color: var(--color-blue);
-    background-image: url('../images/bg-view.png');
+    background-image: url("../images/bg-view.png");
     color: var(--color-card-bg);
     text-align: center;
 }
@@ -96,7 +102,7 @@ a { text-decoration: none; color: inherit; }
 }
 
 .btn-mid {
-    background-color: #ECE6E6;
+    background-color: #ece6e6;
     color: #737373;
     border: none;
     border-radius: 5px;
@@ -112,7 +118,6 @@ a { text-decoration: none; color: inherit; }
     padding: 40px;
 }
 
-
 /* ---------------------------------
 ========== NAVBAR & HEADER ==========
 --------------------------------- */
@@ -122,6 +127,7 @@ a { text-decoration: none; color: inherit; }
     left: 0;
     width: 100%;
     z-index: 1000;
+    cursor: pointer;
 
     display: flex;
     justify-content: space-between;
@@ -140,6 +146,7 @@ a { text-decoration: none; color: inherit; }
 .header__navigasi {
     display: flex;
     gap: 30px;
+    cursor: pointer;
 }
 
 .navigasi__item {
@@ -194,7 +201,7 @@ a { text-decoration: none; color: inherit; }
     padding: 10px 15px;
     display: flex;
     align-items: center;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
     gap: 10px;
 }
 
@@ -211,7 +218,7 @@ a { text-decoration: none; color: inherit; }
 
 .menu-item.active span {
     font-weight: 600;
-    color: #007BFF;
+    color: #007bff;
 }
 
 .menu-item:hover {
@@ -282,7 +289,7 @@ a { text-decoration: none; color: inherit; }
 
 /* Input dan Tombol Form */
 .form-group {
-     margin-bottom: 15px;
+    margin-bottom: 15px;
 }
 
 .form-input {
@@ -323,8 +330,8 @@ a { text-decoration: none; color: inherit; }
 /* Form Toggling */
 .form-register {
     display: none;
-    }
-        
+}
+
 /* RESPONSIVE untuk Modal */
 @media (max-width: 500px) {
     .auth-card {
@@ -334,7 +341,6 @@ a { text-decoration: none; color: inherit; }
         font-size: 22px;
     }
 }
-
 
 /* ------------------------------------------
 ========== HERO & CONTENT SECTIONS ==========
@@ -389,7 +395,7 @@ a { text-decoration: none; color: inherit; }
 }
 
 .penjelasan__judul {
-    font-size: var(--font-size-title-2); 
+    font-size: var(--font-size-title-2);
     font-weight: var(--font-weight-bold);
     margin-bottom: var(--spacing-base);
 }
@@ -398,7 +404,6 @@ a { text-decoration: none; color: inherit; }
     font-size: var(--font-size-large);
     color: var(--color-text-mid);
 }
-
 
 /* -----------------------------
 ========== Fitur (Kartu) ==========
@@ -418,7 +423,7 @@ a { text-decoration: none; color: inherit; }
     max-width: 400px;
     text-align: left;
     border-top: 5px solid var(--color-blue);
-    background-color: var(--color-card-bg) ;
+    background-color: var(--color-card-bg);
     border-radius: 1cap;
 }
 
@@ -595,7 +600,7 @@ a { text-decoration: none; color: inherit; }
 }
 
 /* ===== Form Diabtes (Kiri) ===== */
-.container-form-diabetes{
+.container-form-diabetes {
     display: flex;
     gap: 40px;
 }
@@ -666,7 +671,7 @@ a { text-decoration: none; color: inherit; }
 .hasil-ai-diabetes__judul_good {
     font-size: 30px;
     font-weight: var(--font-weight-extrabold);
-    color: #4CAF50;
+    color: #4caf50;
     margin-bottom: 10px;
 }
 
@@ -684,12 +689,12 @@ a { text-decoration: none; color: inherit; }
 .hasil-ai-diabetes__judul_bad {
     font-size: 30px;
     font-weight: var(--font-weight-extrabold);
-    color: #F44336;
+    color: #f44336;
     margin-bottom: 10px;
 }
 
 .hasil-ai-diabetes__konten_bad {
-    background-color: #FFDCDA;
+    background-color: #ffdcda;
     width: calc(100% + 60px);
     margin: -30px -30px 20px -30px;
     padding: 30px;
@@ -751,7 +756,7 @@ a { text-decoration: none; color: inherit; }
 }
 
 /* ===== Form Lifestyle (Kiri) ===== */
-.container-form-lifestyle{
+.container-form-lifestyle {
     display: flex;
     gap: 40px;
 }
@@ -813,7 +818,7 @@ a { text-decoration: none; color: inherit; }
 .hasil-ai-lifestyle__judul_good {
     font-size: 30px;
     font-weight: var(--font-weight-extrabold);
-    color: #4CAF50;
+    color: #4caf50;
     margin-bottom: 10px;
 }
 
@@ -831,12 +836,12 @@ a { text-decoration: none; color: inherit; }
 .hasil-ai-lifestyle__judul_bad {
     font-size: 30px;
     font-weight: var(--font-weight-extrabold);
-    color: #F44336;
+    color: #f44336;
     margin-bottom: 10px;
 }
 
 .hasil-ai-lifestyle__konten_bad {
-    background-color: #FFDCDA;
+    background-color: #ffdcda;
     width: calc(100% + 60px);
     margin: -30px -30px 20px -30px;
     padding: 30px;
@@ -898,11 +903,11 @@ a { text-decoration: none; color: inherit; }
 }
 
 /* ===== Form Profile (Kiri) ===== */
-.container-form-profile{
+.container-form-profile {
     display: flex;
     gap: 40px;
 }
-.kolom-input-form-profile{
+.kolom-input-form-profile {
     flex: 2;
     padding: 30px;
     border-radius: 15px;
@@ -966,11 +971,19 @@ a { text-decoration: none; color: inherit; }
     padding: 40px;
 }
 .foto-profile {
-    max-width: fit-content;
-    height: auto;
+    max-width: 400px;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 10px;
     margin: 10px 0 20px 0;
 }
-
+.foto-profile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* crop tengah */
+    object-position: center; /* fokus bagian tengah gambar */
+    display: block; /* hilangkan space bawah img */
+}
 .btn-ganti-profile {
     width: 100%;
     padding: 12px 0;
@@ -991,7 +1004,7 @@ a { text-decoration: none; color: inherit; }
 }
 
 .btn-simpan {
-    width: 200px; 
+    width: 200px;
     padding: 12px 30px;
     border-radius: 8px;
     margin-top: 20px;
@@ -1004,8 +1017,8 @@ a { text-decoration: none; color: inherit; }
     right: 25px;
     width: 45px;
     height: 45px;
-    background-color: #FFE8E6;
-    color: #F44336;
+    background-color: #ffe8e6;
+    color: #f44336;
     border: none;
     border-radius: 50%;
     font-size: 20px;
@@ -1018,7 +1031,7 @@ a { text-decoration: none; color: inherit; }
 }
 
 .btn-logout:hover {
-    background-color: #FFE8E6;
+    background-color: #ffe8e6;
     transform: scale(1.05);
 }
 
@@ -1033,7 +1046,7 @@ a { text-decoration: none; color: inherit; }
     font-size: var(--font-size-base);
     color: var(--color-text-mid);
     transition: border-color 0.3s, box-shadow 0.3s;
-    
+
     /* Tambahan untuk select agar panah dropdown lebih terlihat */
     appearance: none; /* Menghilangkan styling default browser */
     -webkit-appearance: none;
@@ -1044,18 +1057,18 @@ a { text-decoration: none; color: inherit; }
     cursor: pointer;
 }
 
-.form-group-with-icon{
+.form-group-with-icon {
     position: relative;
     margin-bottom: 15px;
 }
 
 .form-group-with-icon .form__input-profile {
     padding-right: 50px; /* Sisakan ruang untuk ikon */
-    margin-bottom: 0; 
+    margin-bottom: 0;
 }
 
 .password-toggle-icon {
-    position: absolute; 
+    position: absolute;
     top: 50%;
     right: 20px;
     transform: translateY(-50%);
@@ -1074,7 +1087,6 @@ a { text-decoration: none; color: inherit; }
     box-shadow: 0 0 0 3px rgba(0, 168, 232, 0.2);
 }
 
-
 /* -----------------------------
 ========== RESPONSIVE ==========
 ----------------------------- */
@@ -1084,17 +1096,24 @@ a { text-decoration: none; color: inherit; }
         --section-padding: 40px;
     }
 
-    .header, .section, .bagian-hero, .bagian-fitur-utama, .kaki-halaman {
+    .header,
+    .section,
+    .bagian-hero,
+    .bagian-fitur-utama,
+    .kaki-halaman {
         padding-left: 40px;
         padding-right: 40px;
     }
 
-    .hero__konten, .penjelasan__konten {
+    .hero__konten,
+    .penjelasan__konten {
         max-width: 100%;
         text-align: center;
     }
 
-    .bagian-hero, .bagian-penjelasan, .wadah-prediksi {
+    .bagian-hero,
+    .bagian-penjelasan,
+    .wadah-prediksi {
         flex-direction: column;
     }
 
@@ -1127,11 +1146,14 @@ a { text-decoration: none; color: inherit; }
         gap: 15px;
     }
 
-    .header, .section, .bagian-fitur-utama, .kaki-halaman {
+    .header,
+    .section,
+    .bagian-fitur-utama,
+    .kaki-halaman {
         padding-left: 20px;
         padding-right: 20px;
     }
-    
+
     .langkah__item {
         width: 100%;
     }
