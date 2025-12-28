@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LifestyleController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PredictionFormController;
 use App\Http\Controllers\ProfileController;
@@ -32,9 +33,13 @@ Route::post('/diabetes/predict', [PredictionFormController::class, 'predict'])
     ->middleware('auth')
     ->name('diabetes.predict');
 
-Route::get('/lifestyle', function () {
-    return view('page.lifestyle');
-})->middleware('auth')->name('lifestyle.page');
+Route::middleware('auth')->group(function () {
+    Route::get('/lifestyle', [LifestyleController::class, 'index'])
+        ->name('lifestyle.page');
+
+    Route::post('/lifestyle', [LifestyleController::class, 'store'])
+        ->name('lifestyle.store');
+});
 
 // PROFILE Routes
 Route::post('/profile/update', [ProfileController::class, 'update'])
