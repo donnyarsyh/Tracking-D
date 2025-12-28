@@ -1,0 +1,62 @@
+@extends('main.index')
+@section('content')
+    <div class="container-form-lifestyle">
+        <div class="kolom-input-form-lifestyle card-lifestyle">
+            <form action="{{ route('lifestyle.store') }}" method="POST" class="form-prediksi" id="form-prediksi">
+                @csrf
+
+                <h2 class="form__judul-lifestyle">Formulir Gaya Hidup</h2>
+                <p class="form__deskripsi-lifestyle">
+                    Pilih data gaya hidup kamu untuk dianalisis oleh sistem.
+                </p>
+
+                <!-- CHECKBOX -->
+                <label class="form__label-lifestyle">Makanan yang Dikonsumsi</label>
+                <div class="checkbox-group-lifestyle">
+                    <label><input type="checkbox" name="makanan[]" value="Sayuran"> Sayuran</label>
+                    <label><input type="checkbox" name="makanan[]" value="Buah-buahan"> Buah-buahan</label>
+                    <label><input type="checkbox" name="makanan[]" value="Nasi Putih"> Nasi Putih</label>
+                    <label><input type="checkbox" name="makanan[]" value="Makanan Manis"> Makanan Manis</label>
+                    <label><input type="checkbox" name="makanan[]" value="Makanan Cepat Saji"> Makanan Cepat Saji</label>
+                </div>
+                <br>
+
+                <label class="form__label-lifestyle">Olahraga yang Dilakukan</label>
+                <div class="checkbox-group-lifestyle">
+                    <label><input type="checkbox" name="olahraga[]" value="Lari"> Lari</label>
+                    <label><input type="checkbox" name="olahraga[]" value="Jalan Kaki"> Jalan Kaki</label>
+                    <label><input type="checkbox" name="olahraga[]" value="Senam Ringan"> Senam Ringan</label>
+                    <label><input type="checkbox" name="olahraga[]" value="Berenang"> Berenang</label>
+                    <label><input type="checkbox" name="olahraga[]" value="Tidak Berolahraga"> Tidak Berolahraga</label>
+                </div>
+                <br>
+
+                <label class="form__label-lifestyle">Aktivitas Harian</label>
+                <div class="checkbox-group-lifestyle">
+                    <label><input type="checkbox" name="aktivitas[]" value="Berkerja didepan komputer"> Berkerja didepan
+                        komputer</label>
+                    <label><input type="checkbox" name="aktivitas[]" value="Banyak duduk"> Banyak duduk</label>
+                    <label><input type="checkbox" name="aktivitas[]" value="Aktif bergerak"> Aktif bergerak</label>
+                    <label><input type="checkbox" name="aktivitas[]" value="Pekerjaan Fisik"> Pekerjaan Fisik</label>
+                    <label><input type="checkbox" name="aktivitas[]" value="Kombinasi aktivitas"> Kombinasi
+                        aktivitas</label>
+                </div>
+                <br>
+            </form>
+        </div>
+        <div class="kolom-hasil-ai-lifestyle card-ai-lifestyle">
+            <div class="hasil-ai-lifestyle__konten_good">
+                <h2 class="hasil-ai-lifestyle__judul_good"> {{ $hasil ?? 'Silakan isi form' }}</h2>
+                <p class="hasil-ai-lifestyle__deskripsi"> {{ $deskripsi ?? '' }}</p>
+            </div>
+            @if (isset($score))
+                <small>Skor Gaya Hidup: {{ $score }}</small>
+            @endif
+            <div class="hasil-ai-lifestyle__gambar">
+                <img src="{{ asset('images/good.jpg') }}" alt="Karakter Dokter AI">
+            </div>
+            <button type="submit" form="form-prediksi"
+                class="hasil-ai-lifestyle__tombol-generate btn-primary">Generate</button>
+        </div>
+    </div>
+@endsection
