@@ -5,8 +5,8 @@
 }
 
 :root {
-    --color-blue: #00a8e8;
-    --color-blue-hover: #0077b6; /* hover */
+    --color-blue: #3acabb;
+    --color-blue-hover: #33b3a6; /* hover */
     --color-text-dark: #000;
     --color-text-mid: #666;
     --color-text-light: #777;
@@ -189,12 +189,6 @@ a {
 }
 
 .menu-item {
-    /* display: flex;
-    flex-direction: column;
-    align-items: center;
-    cursor: pointer;
-    padding: 10px;
-    transition: 0.3s; */
     background-color: #ffffff;
     border: 1px solid #e5e7eb;
     border-radius: 0.75rem;
@@ -220,7 +214,7 @@ a {
 
 .menu-item.active span {
     font-weight: 600;
-    color: #007bff;
+    color: #3acabb;
 }
 
 .menu-item:hover {
@@ -460,7 +454,7 @@ a {
 ========== Tutorial ==========
 --------------------------------- */
 .tutorial__subjudul {
-    color: #c9e0ff;
+    color: #ffffff;
 }
 
 .tutorial__wadah-langkah {
